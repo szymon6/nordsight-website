@@ -62,7 +62,8 @@ export function HeaderSection() {
             animationNum={0}
             timelineRef={taglineRef}
             customVariants={taglineVariants}
-            className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground"
+            once
+            className="text-lg leading-relaxed text-muted-foreground"
           >
             At the forefront of AI innovation,{' '}
             <HeadlineHighlight animationNum={1} timelineRef={taglineRef}>
@@ -120,6 +121,7 @@ function HeadlineHighlight({
           filter: 'blur(8px)',
         },
       }}
+      once
       className={cn(
         'inline-block whitespace-nowrap font-semibold text-foreground'
       )}
