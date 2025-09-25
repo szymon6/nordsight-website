@@ -1,5 +1,5 @@
-import DemoOne from "@/components/demo";
+import { HeaderSection } from "@/components/sections/header";
 
 export default function Home() {
-  return <DemoOne />;
+  return <HeaderSection />;
 }

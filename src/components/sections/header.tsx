@@ -1,9 +1,9 @@
 import { DottedSurface } from "@/components/ui/dotted-surface";
 import { cn } from "@/lib/utils";
 
-export default function DemoOne() {
+export function HeaderSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background text-foreground">
+    <header className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background text-foreground">
       <DottedSurface />
       <div className="relative z-10 flex flex-col items-center gap-6 text-center">
         <div
@@ -15,9 +15,9 @@ export default function DemoOne() {
           )}
         />
         <h1 className="font-mono text-4xl font-semibold tracking-tight sm:text-5xl">
-          Dotted Surface
+          AI data insight, for people
         </h1>
       </div>
-    </section>
+    </header>
   );
 }
