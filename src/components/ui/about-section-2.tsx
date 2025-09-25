@@ -28,15 +28,14 @@ export default function AboutSection2() {
   return (
     <section className="relative z-10 flex justify-center bg-background px-6 py-24 text-foreground sm:py-32">
       <div
-        className="mx-auto w-full max-w-3xl space-y-7 text-center sm:space-y-9"
+        className="mx-auto w-full max-w-3xl space-y-6 text-left sm:space-y-8"
         ref={sectionRef}
       >
         <TimelineContent
-          as="p"
           animationNum={0}
           timelineRef={sectionRef}
           customVariants={headlineVariants}
-          className="text-balance text-xl leading-[1.8] text-muted-foreground sm:text-[28px] sm:leading-[1.9]"
+          className="text-balance text-lg leading-relaxed tracking-tight text-muted-foreground text-center sm:text-2xl"
         >
           At the forefront of{' '}
           <Highlight animationNum={1} timelineRef={sectionRef}>
@@ -86,7 +85,7 @@ function Highlight({ children, animationNum, timelineRef }: HighlightProps) {
         },
       }}
       className={cn(
-        'inline-block whitespace-nowrap font-semibold text-foreground'
+        'inline-block whitespace-nowrap font-serif font-semibold text-foreground'
       )}
     >
       <span className="relative z-10 tracking-tight">{children}</span>

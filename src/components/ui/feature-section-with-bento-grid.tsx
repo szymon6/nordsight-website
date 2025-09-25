@@ -35,7 +35,7 @@ const defaultContent: FeatureContent = {
     {
       title: 'Applied AI Research',
       description:
-        'We bridge the gap between emerging technologies and business needs, turning technology breakthroughs into practical solutions.',
+        'We bridge the gap between emerging technologies and business needs, turning AI breakthroughs into practical solutions.',
       icon: Brain,
       layout: 'wide',
     },
