@@ -28,11 +28,18 @@ export function HeaderSection() {
         <h1 className="font-mono text-4xl font-semibold tracking-tight sm:text-5xl">
           AI data insight, for people
         </h1>
-        <InteractiveHoverButton
-          text="Learn more"
-          className="w-36"
-          onClick={scrollToAbout}
-        />
+        <div className="flex items-center gap-3">
+          <InteractiveHoverButton
+            text="Learn more"
+            className="w-36"
+            onClick={scrollToAbout}
+          />
+          <InteractiveHoverButton
+            text="contact"
+            className="w-36"
+            invert
+          />
+        </div>
       </div>
     </header>
   )
