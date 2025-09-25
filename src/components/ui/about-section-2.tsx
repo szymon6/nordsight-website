@@ -47,9 +47,9 @@ export default function AboutSection2() {
           , Nordsight Analytics pushes research beyond the lab. We build
           solutions that drive{' '}
           <Highlight animationNum={2} timelineRef={sectionRef}>
-            predictive insights
-          </Highlight>
-          , and empower{' '}
+            predictive insights,
+          </Highlight>{' '}
+          and empower{' '}
           <Highlight animationNum={3} timelineRef={sectionRef}>
             data-driven decisions
           </Highlight>

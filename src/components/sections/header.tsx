@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { DottedSurface } from "@/components/ui/dotted-surface";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import { cn } from "@/lib/utils";
+import { DottedSurface } from '@/components/ui/dotted-surface'
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
+import { cn } from '@/lib/utils'
 
 function scrollToAbout() {
-  const section = document.getElementById("about");
-  section?.scrollIntoView({ behavior: "smooth" });
+  const section = document.getElementById('about')
+  section?.scrollIntoView({ behavior: 'smooth' })
 }
 
 export function HeaderSection() {
@@ -17,9 +17,9 @@ export function HeaderSection() {
         <div
           aria-hidden="true"
           className={cn(
-            "pointer-events-none absolute inset-x-0 -top-32 mx-auto h-72 w-72 rounded-full",
-            "bg-[radial-gradient(ellipse_at_center,var(--foreground)_0%,transparent_65%)]",
-            "opacity-20 blur-[120px]",
+            'pointer-events-none absolute inset-x-0 -top-32 mx-auto h-72 w-72 rounded-full',
+            'bg-[radial-gradient(ellipse_at_center,var(--foreground)_0%,transparent_65%)]',
+            'opacity-20 blur-[120px]'
           )}
         />
         <h1 className="font-mono text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -32,5 +32,5 @@ export function HeaderSection() {
         />
       </div>
     </header>
-  );
+  )
 }
