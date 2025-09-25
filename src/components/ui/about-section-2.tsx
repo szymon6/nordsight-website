@@ -26,7 +26,7 @@ export default function AboutSection2() {
   }
 
   return (
-    <section className="relative flex justify-center bg-background px-6 py-24 text-foreground sm:py-32">
+    <section className="relative z-10 flex justify-center bg-background px-6 py-24 text-foreground sm:py-32">
       <div
         className="mx-auto w-full max-w-3xl space-y-7 text-center sm:space-y-9"
         ref={sectionRef}
