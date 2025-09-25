@@ -36,7 +36,7 @@ export default function AboutSection2() {
           animationNum={0}
           timelineRef={sectionRef}
           customVariants={headlineVariants}
-          className="text-balance text-xl leading-[1.9] text-muted-foreground sm:text-[28px] sm:leading-[2.1]"
+          className="text-balance text-xl leading-[1.8] text-muted-foreground sm:text-[28px] sm:leading-[1.9]"
         >
           At the forefront of{' '}
           <Highlight animationNum={1} timelineRef={sectionRef}>
