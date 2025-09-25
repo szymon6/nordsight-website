@@ -1,14 +1,19 @@
 'use client'
 
+import { useRef, type ReactNode, type RefObject } from 'react'
+
 import { DottedSurface } from '@/components/ui/dotted-surface'
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
+import { TimelineContent } from '@/components/ui/timeline-animation'
 import { smoothScrollIntoView } from '@/lib/scroll'
 import { cn } from '@/lib/utils'
 
-function scrollToAbout() {
-  const section = document.getElementById('about')
+const easeOutTransition = 'easeOut' as const
+
+function scrollToWhatWeDo() {
+  const section = document.getElementById('what-we-do')
   if (section instanceof HTMLElement) {
-    smoothScrollIntoView(section, { offset: 0, duration: 2500 })
+    smoothScrollIntoView(section, { offset: -100, duration: 2500 })
   }
 }
 
@@ -17,6 +22,26 @@ function openContactMail() {
 }
 
 export function HeaderSection() {
+  const taglineRef = useRef<HTMLDivElement>(null)
+
+  const taglineVariants = {
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      filter: 'blur(0px)',
+      transition: {
+        delay: 0.6 + i * 0.3,
+        duration: 0.6,
+        ease: easeOutTransition,
+      },
+    }),
+    hidden: {
+      y: 24,
+      opacity: 0,
+      filter: 'blur(12px)',
+    },
+  }
+
   return (
     <header className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background text-foreground">
       <DottedSurface />
@@ -32,11 +57,25 @@ export function HeaderSection() {
         <h1 className="font-mono text-4xl font-semibold tracking-tight sm:text-5xl">
           AI data insights, for people
         </h1>
+        <div ref={taglineRef} className="w-full">
+          <TimelineContent
+            animationNum={0}
+            timelineRef={taglineRef}
+            customVariants={taglineVariants}
+            className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground"
+          >
+            At the forefront of AI innovation,{' '}
+            <HeadlineHighlight animationNum={1} timelineRef={taglineRef}>
+              Nordsight Analytics
+            </HeadlineHighlight>{' '}
+            pushes research beyond the lab.
+          </TimelineContent>
+        </div>
         <div className="flex items-center gap-3">
           <InteractiveHoverButton
             text="Learn more"
             className="w-36"
-            onClick={scrollToAbout}
+            onClick={scrollToWhatWeDo}
           />
           <InteractiveHoverButton
             text="contact"
@@ -47,5 +86,45 @@ export function HeaderSection() {
         </div>
       </div>
     </header>
+  )
+}
+
+type HighlightProps = {
+  children: ReactNode
+  animationNum: number
+  timelineRef: RefObject<HTMLDivElement | null>
+}
+
+function HeadlineHighlight({
+  children,
+  animationNum,
+  timelineRef,
+}: HighlightProps) {
+  return (
+    <TimelineContent
+      as="span"
+      animationNum={animationNum}
+      timelineRef={timelineRef}
+      customVariants={{
+        visible: (i: number) => ({
+          opacity: 1,
+          filter: 'blur(0px)',
+          transition: {
+            delay: 1 + i * 0.15,
+            duration: 0.45,
+            ease: easeOutTransition,
+          },
+        }),
+        hidden: {
+          opacity: 0,
+          filter: 'blur(8px)',
+        },
+      }}
+      className={cn(
+        'inline-block whitespace-nowrap font-semibold text-foreground'
+      )}
+    >
+      <span className="relative z-10 tracking-tight">{children}</span>
+    </TimelineContent>
   )
 }
