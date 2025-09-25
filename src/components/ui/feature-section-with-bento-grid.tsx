@@ -48,7 +48,7 @@ const defaultContent: FeatureContent = {
     {
       title: 'Business Intelligence',
       description:
-        'We deploy AI agents that translate complex data into actionable insights.',
+        'We deploy AI agents that translate complex data into strategy and execution.',
       icon: BarChart3,
     },
     {
