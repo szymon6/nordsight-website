@@ -2,11 +2,14 @@
 
 import { DottedSurface } from '@/components/ui/dotted-surface'
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
+import { smoothScrollIntoView } from '@/lib/scroll'
 import { cn } from '@/lib/utils'
 
 function scrollToAbout() {
   const section = document.getElementById('about')
-  section?.scrollIntoView({ behavior: 'smooth' })
+  if (section instanceof HTMLElement) {
+    smoothScrollIntoView(section, { offset: 0, duration: 2500 })
+  }
 }
 
 export function HeaderSection() {
