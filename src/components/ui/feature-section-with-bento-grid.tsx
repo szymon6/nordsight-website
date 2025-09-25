@@ -54,7 +54,7 @@ const defaultContent: FeatureContent = {
     {
       title: 'Process Optimization',
       description:
-        'We use AI to analyze workflows to uncover inefficiencies and introduce data-driven improvements that scale.',
+        'We use AI to uncover inefficiencies and introduce data-driven improvements that scale.',
       icon: Workflow,
       layout: 'wide',
     },
