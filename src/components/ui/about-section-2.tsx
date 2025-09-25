@@ -27,13 +27,16 @@ export default function AboutSection2() {
 
   return (
     <section className="relative flex justify-center bg-background px-6 py-24 text-foreground sm:py-32">
-      <div className="mx-auto flex w-full max-w-4xl flex-col gap-8" ref={sectionRef}>
+      <div
+        className="mx-auto w-full max-w-3xl space-y-7 text-center sm:space-y-9"
+        ref={sectionRef}
+      >
         <TimelineContent
           as="p"
           animationNum={0}
           timelineRef={sectionRef}
           customVariants={headlineVariants}
-          className="text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl"
+          className="text-balance text-xl leading-[1.9] text-muted-foreground sm:text-[28px] sm:leading-[2.1]"
         >
           At the forefront of{' '}
           <Highlight animationNum={1} timelineRef={sectionRef}>
@@ -44,7 +47,7 @@ export default function AboutSection2() {
           <Highlight animationNum={2} timelineRef={sectionRef}>
             predictive insights
           </Highlight>
-          , optimize processes, and empower{' '}
+          , and empower{' '}
           <Highlight animationNum={3} timelineRef={sectionRef}>
             data-driven decisions
           </Highlight>
@@ -72,8 +75,9 @@ function Highlight({ children, animationNum, timelineRef }: HighlightProps) {
           opacity: 1,
           filter: 'blur(0px)',
           transition: {
-            delay: 0.2 + i * 0.2,
-            duration: 0.4,
+            delay: 0.35 + i * 0.15,
+            duration: 0.45,
+            ease: 'easeOut',
           },
         }),
         hidden: {
@@ -82,11 +86,10 @@ function Highlight({ children, animationNum, timelineRef }: HighlightProps) {
         },
       }}
       className={cn(
-        'inline-flex items-center gap-1 rounded-full border border-foreground/15 px-3 py-1 text-sm font-medium text-foreground',
-        'bg-foreground/[0.05] backdrop-blur'
+        'inline-block whitespace-nowrap font-semibold text-foreground'
       )}
     >
-      {children}
+      <span className="relative z-10 tracking-tight">{children}</span>
     </TimelineContent>
   )
 }
