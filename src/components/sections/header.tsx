@@ -1,5 +1,13 @@
+"use client";
+
 import { DottedSurface } from "@/components/ui/dotted-surface";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { cn } from "@/lib/utils";
+
+function scrollToAbout() {
+  const section = document.getElementById("about");
+  section?.scrollIntoView({ behavior: "smooth" });
+}
 
 export function HeaderSection() {
   return (
@@ -17,6 +25,11 @@ export function HeaderSection() {
         <h1 className="font-mono text-4xl font-semibold tracking-tight sm:text-5xl">
           AI data insight, for people
         </h1>
+        <InteractiveHoverButton
+          text="Learn more"
+          className="w-36"
+          onClick={scrollToAbout}
+        />
       </div>
     </header>
   );
