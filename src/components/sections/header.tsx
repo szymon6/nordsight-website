@@ -12,6 +12,10 @@ function scrollToAbout() {
   }
 }
 
+function openContactMail() {
+  window.location.href = 'mailto:hello@nordsightanalytics.com'
+}
+
 export function HeaderSection() {
   return (
     <header className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background text-foreground">
@@ -34,7 +38,12 @@ export function HeaderSection() {
             className="w-36"
             onClick={scrollToAbout}
           />
-          <InteractiveHoverButton text="contact" className="w-36" invert />
+          <InteractiveHoverButton
+            text="contact"
+            className="w-36"
+            invert
+            onClick={openContactMail}
+          />
         </div>
       </div>
     </header>
