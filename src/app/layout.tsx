@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-const siteTitle = 'Nordsight Analytics | Human-Centered AI Data Insights'
+const siteTitle = 'Nordsight Analytics'
 const siteDescription =
-  'Nordsight Analytics transforms advanced AI research into predictive analytics, business intelligence, and operational insights that drive confident, data-led decisions.'
+  'Nordsight Analytics transforms advanced AI research into predictive analytics, autonomous business intelligence, and operational insights that drive confident, data-led decisions.'
 
 export const metadata: Metadata = {
   title: {
@@ -60,11 +60,6 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
     },
-  },
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/favicon.ico',
-    shortcut: '/favicon.ico',
   },
 }
 

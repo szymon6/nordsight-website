@@ -25,6 +25,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
     const SEPARATION = 150;
     const AMOUNTX = 40;
     const AMOUNTY = 60;
+    const WAVE_SPEED = 0.03;
 
     const scene = new THREE.Scene();
     scene.fog = new THREE.Fog(0xffffff, 2000, 10000);
@@ -107,7 +108,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
       positionAttribute.needsUpdate = true;
 
       renderer.render(scene, camera);
-      count += 0.1;
+      count += WAVE_SPEED;
     };
 
     const handleResize = () => {

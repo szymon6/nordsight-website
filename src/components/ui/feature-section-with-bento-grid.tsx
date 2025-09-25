@@ -72,7 +72,7 @@ function Feature({ content = defaultContent }: FeatureProps) {
 
   return (
     <section className="relative z-10 w-full bg-background py-20 lg:py-40">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-10">
           <div className="flex gap-4 flex-col items-start">
             <div>
