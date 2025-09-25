@@ -42,7 +42,7 @@ const defaultContent: FeatureContent = {
     {
       title: 'Predictive Analytics',
       description:
-        "We develop models that don't just forecast the future - they guide smarter action.",
+        "We develop models that don't just forecast - they guide smarter action.",
       icon: LineChart,
     },
     {
