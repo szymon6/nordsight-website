@@ -4,6 +4,8 @@ import { TimelineContent } from '@/components/ui/timeline-animation'
 import { cn } from '@/lib/utils'
 import { useRef, type ReactNode, type RefObject } from 'react'
 
+const easeOutTransition = 'easeOut' as const
+
 export default function AboutSection2() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
@@ -15,7 +17,7 @@ export default function AboutSection2() {
       transition: {
         delay: i * 0.3,
         duration: 0.6,
-        ease: 'easeOut',
+        ease: easeOutTransition,
       },
     }),
     hidden: {
@@ -44,16 +46,7 @@ export default function AboutSection2() {
           <Highlight animationNum={1} timelineRef={sectionRef}>
             AI innovation
           </Highlight>
-          , Nordsight Analytics pushes research beyond the lab. We build
-          solutions that drive{' '}
-          <Highlight animationNum={2} timelineRef={sectionRef}>
-            predictive insights,
-          </Highlight>{' '}
-          and empower{' '}
-          <Highlight animationNum={3} timelineRef={sectionRef}>
-            data-driven decisions
-          </Highlight>
-          .
+          , Nordsight Analytics pushes research beyond the lab.
         </TimelineContent>
       </div>
     </section>
@@ -79,7 +72,7 @@ function Highlight({ children, animationNum, timelineRef }: HighlightProps) {
           transition: {
             delay: 0.35 + i * 0.15,
             duration: 0.45,
-            ease: 'easeOut',
+            ease: easeOutTransition,
           },
         }),
         hidden: {
