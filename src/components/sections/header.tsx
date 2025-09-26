@@ -9,6 +9,7 @@ import { smoothScrollIntoView } from '@/lib/scroll'
 import { cn } from '@/lib/utils'
 
 const easeOutTransition = 'easeOut' as const
+const premiumEase = [0.22, 1, 0.36, 1] as const
 
 function scrollToWhatWeDo() {
   const section = document.getElementById('what-we-do')
@@ -30,9 +31,9 @@ export function HeaderSection() {
       opacity: 1,
       filter: 'blur(0px)',
       transition: {
-        delay: 0.6 + i * 0.3,
-        duration: 0.6,
-        ease: easeOutTransition,
+        delay: 0.75 + i * 0.4,
+        duration: 1.1,
+        ease: premiumEase,
       },
     }),
     hidden: {
