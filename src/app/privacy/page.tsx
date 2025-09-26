@@ -39,8 +39,7 @@ export default function PrivacyPage() {
           </h1>
           <p className="max-w-2xl text-base leading-relaxed">
             This page explains how the Nordsight Analytics website handles
-            visitor information, analytics tools, and the options available to
-            you.
+            visitor information.
           </p>
         </header>
 
