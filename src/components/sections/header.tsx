@@ -14,7 +14,7 @@ const premiumEase = [0.22, 1, 0.36, 1] as const
 function scrollToWhatWeDo() {
   const section = document.getElementById('what-we-do')
   if (section instanceof HTMLElement) {
-    smoothScrollIntoView(section, { offset: -100, duration: 2500 })
+    smoothScrollIntoView(section, { offset: -70, duration: 2500 })
   }
 }
 
