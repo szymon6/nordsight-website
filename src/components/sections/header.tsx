@@ -93,7 +93,7 @@ export function HeaderSection() {
         className="relative z-10 flex flex-col items-center gap-6 text-center"
       >
         <h1 className="font-mono text-4xl font-semibold tracking-tight sm:text-5xl">
-          AI data insights, for people
+          AI Data Insights, for People
         </h1>
         <div className="w-full">
           <TimelineContent
