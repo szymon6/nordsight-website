@@ -14,7 +14,11 @@ const premiumEase = [0.22, 1, 0.36, 1] as const
 function scrollToWhatWeDo() {
   const section = document.getElementById('what-we-do')
   if (section instanceof HTMLElement) {
-    smoothScrollIntoView(section, { offset: -70, duration: 2500 })
+    const prefersMobileLayout =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(max-width: 640px)').matches
+    const offset = prefersMobileLayout ? -70 : -120
+    smoothScrollIntoView(section, { offset, duration: 2500 })
   }
 }
 
@@ -64,7 +68,7 @@ export function HeaderSection() {
             timelineRef={taglineRef}
             customVariants={taglineVariants}
             once
-            className="text-lg leading-relaxed text-muted-foreground"
+            className="px-6 text-lg leading-relaxed text-muted-foreground sm:px-0"
           >
             At the forefront of AI innovation,{' '}
             <HeadlineHighlight animationNum={1} timelineRef={taglineRef}>
