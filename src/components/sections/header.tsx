@@ -40,7 +40,7 @@ export function HeaderSection() {
       opacity: 1,
       filter: 'blur(0px)',
       transition: {
-        delay: 1.25 + i * 0.45,
+        delay: 0.7 + i * 0.3,
         duration: 2.2,
         ease: premiumEase,
       },
@@ -57,7 +57,7 @@ export function HeaderSection() {
       y: 0,
       opacity: 1,
       transition: {
-        delay: 4.9 + i * 0.12,
+        delay: 2.4 + i * 0.08,
         duration: 6.2,
         ease: premiumEase,
       },
@@ -72,7 +72,7 @@ export function HeaderSection() {
     visible: (i: number) => ({
       opacity: 1,
       transition: {
-        delay: 2.8 + i * 0.12,
+        delay: 1.6 + i * 0.08,
         duration: 8.6,
         ease: easeOutTransition,
       },
@@ -166,7 +166,7 @@ function HeadlineHighlight({
           opacity: 1,
           filter: 'blur(0px)',
           transition: {
-            delay: 1.5 + i * 0.25,
+            delay: 0.8 + i * 0.18,
             duration: 1.2,
             ease: easeOutTransition,
           },
