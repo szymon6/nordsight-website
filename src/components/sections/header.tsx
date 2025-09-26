@@ -76,7 +76,7 @@ export function HeaderSection() {
             onClick={scrollToWhatWeDo}
           />
           <InteractiveHoverButton
-            text="contact"
+            text="Contact"
             className="w-36"
             invert
             onClick={openContactMail}
