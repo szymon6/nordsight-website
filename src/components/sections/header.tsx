@@ -31,7 +31,7 @@ export function HeaderSection() {
       opacity: 1,
       filter: 'blur(0px)',
       transition: {
-        delay: 0.75 + i * 0.4,
+        delay: 1 + i * 0.45,
         duration: 2.2,
         ease: premiumEase,
       },
@@ -112,7 +112,7 @@ function HeadlineHighlight({
           opacity: 1,
           filter: 'blur(0px)',
           transition: {
-            delay: 1.2 + i * 0.2,
+            delay: 1.5 + i * 0.25,
             duration: 1.2,
             ease: easeOutTransition,
           },
