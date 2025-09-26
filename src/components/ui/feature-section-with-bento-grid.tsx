@@ -29,7 +29,7 @@ type FeatureProps = {
 
 const defaultContent: FeatureContent = {
   badge: 'What we do?',
-  title: 'Closing the Gap',
+  title: 'Closing the Tech Gap',
   description: '',
   items: [
     {
