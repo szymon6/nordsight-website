@@ -17,7 +17,7 @@ function scrollToWhatWeDo() {
     const prefersMobileLayout =
       typeof window !== 'undefined' &&
       window.matchMedia('(max-width: 640px)').matches
-    const offset = prefersMobileLayout ? -70 : -120
+    const offset = prefersMobileLayout ? -70 : -130
     smoothScrollIntoView(section, { offset, duration: 2500 })
   }
 }
@@ -27,7 +27,7 @@ function openContactMail() {
 }
 
 export function HeaderSection() {
-  const taglineRef = useRef<HTMLDivElement>(null)
+  const heroAnimationRef = useRef<HTMLDivElement>(null)
 
   const taglineVariants = {
     visible: (i: number) => ({
@@ -47,29 +47,76 @@ export function HeaderSection() {
     },
   }
 
+  const actionVariants = {
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 4.9 + i * 0.12,
+        duration: 4.8,
+        ease: premiumEase,
+      },
+    }),
+    hidden: {
+      y: 16,
+      opacity: 0,
+    },
+  }
+
+  const backgroundVariants = {
+    visible: (i: number) => ({
+      opacity: 1,
+      transition: {
+        delay: 3.2 + i * 0.15,
+        duration: 7.4,
+        ease: easeOutTransition,
+      },
+    }),
+    hidden: {
+      opacity: 0,
+    },
+  }
+
   return (
     <header className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background text-foreground">
-      <DottedSurface />
-      <div className="relative z-10 flex flex-col items-center gap-6 text-center">
+      <TimelineContent
+        animationNum={2}
+        timelineRef={heroAnimationRef}
+        customVariants={backgroundVariants}
+        once
+        className="pointer-events-none absolute inset-0 z-0"
+      >
+        <DottedSurface />
+      </TimelineContent>
+      <div
+        ref={heroAnimationRef}
+        className="relative z-10 flex flex-col items-center gap-6 text-center"
+      >
         <h1 className="font-mono text-4xl font-semibold tracking-tight sm:text-5xl">
           AI data insights, for people
         </h1>
-        <div ref={taglineRef} className="w-full">
+        <div className="w-full">
           <TimelineContent
             animationNum={0}
-            timelineRef={taglineRef}
+            timelineRef={heroAnimationRef}
             customVariants={taglineVariants}
             once
             className="px-6 text-lg leading-relaxed text-muted-foreground sm:px-0"
           >
             At the forefront of AI innovation,{' '}
-            <HeadlineHighlight animationNum={1} timelineRef={taglineRef}>
+            <HeadlineHighlight animationNum={1} timelineRef={heroAnimationRef}>
               Nordsight Analytics
             </HeadlineHighlight>{' '}
             pushes research beyond the lab.
           </TimelineContent>
         </div>
-        <div className="flex items-center gap-3">
+        <TimelineContent
+          animationNum={3}
+          timelineRef={heroAnimationRef}
+          customVariants={actionVariants}
+          once
+          className="flex items-center gap-3"
+        >
           <InteractiveHoverButton
             text="Learn more"
             className="w-36"
@@ -81,7 +128,7 @@ export function HeaderSection() {
             invert
             onClick={openContactMail}
           />
-        </div>
+        </TimelineContent>
       </div>
     </header>
   )
