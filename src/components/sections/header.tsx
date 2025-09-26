@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, type ReactNode, type RefObject } from 'react'
+import { useInView } from 'motion/react'
 
 import { DottedSurface } from '@/components/ui/dotted-surface'
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
@@ -28,6 +29,10 @@ function openContactMail() {
 
 export function HeaderSection() {
   const heroAnimationRef = useRef<HTMLDivElement>(null)
+  const isHeroInView = useInView(heroAnimationRef, {
+    amount: 0.35,
+  })
+  const shouldHideBackground = heroAnimationRef.current ? !isHeroInView : false
 
   const taglineVariants = {
     visible: (i: number) => ({
@@ -86,7 +91,13 @@ export function HeaderSection() {
         once
         className="pointer-events-none absolute inset-0 z-0"
       >
-        <DottedSurface />
+        <DottedSurface
+          aria-hidden
+          className={cn(
+            'transition-opacity duration-700 ease-out',
+            shouldHideBackground && 'opacity-0',
+          )}
+        />
       </TimelineContent>
       <div
         ref={heroAnimationRef}

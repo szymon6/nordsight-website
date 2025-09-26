@@ -5,9 +5,15 @@ import { useTheme } from 'next-themes';
 import { useEffect, useRef, type ComponentProps } from 'react';
 import * as THREE from 'three';
 
-type DottedSurfaceProps = Omit<ComponentProps<'div'>, 'ref'>;
+type DottedSurfaceProps = Omit<ComponentProps<'div'>, 'ref'> & {
+  position?: 'fixed' | 'absolute';
+};
 
-export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
+export function DottedSurface({
+  className,
+  position = 'fixed',
+  ...props
+}: DottedSurfaceProps) {
   const { theme } = useTheme();
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,8 +49,29 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
       antialias: true,
     });
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(scene.fog.color, 0);
+
+    const getContainerSize = () => {
+      if (!container) {
+        return { width: window.innerWidth, height: window.innerHeight };
+      }
+      const rect = container.getBoundingClientRect();
+      const width = rect.width || window.innerWidth;
+      const height = rect.height || window.innerHeight;
+      return {
+        width: Math.max(width, 1),
+        height: Math.max(height, 1),
+      };
+    };
+
+    const setRendererSize = () => {
+      const { width, height } = getContainerSize();
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    };
+
+    setRendererSize();
 
     container.appendChild(renderer.domElement);
 
@@ -112,9 +139,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
     };
 
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      setRendererSize();
     };
 
     window.addEventListener('resize', handleResize);
@@ -156,7 +181,11 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
   return (
     <div
       ref={containerRef}
-      className={cn('pointer-events-none fixed inset-0 z-0', className)}
+      className={cn(
+        'pointer-events-none inset-0 z-0',
+        position === 'fixed' ? 'fixed' : 'absolute',
+        className,
+      )}
       {...props}
     />
   );
