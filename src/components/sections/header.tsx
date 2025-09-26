@@ -58,7 +58,7 @@ export function HeaderSection() {
       opacity: 1,
       transition: {
         delay: 4.9 + i * 0.12,
-        duration: 4.8,
+        duration: 6.2,
         ease: premiumEase,
       },
     }),
@@ -72,8 +72,8 @@ export function HeaderSection() {
     visible: (i: number) => ({
       opacity: 1,
       transition: {
-        delay: 3.2 + i * 0.15,
-        duration: 7.4,
+        delay: 2.8 + i * 0.12,
+        duration: 8.6,
         ease: easeOutTransition,
       },
     }),
