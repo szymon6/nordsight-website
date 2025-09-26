@@ -13,7 +13,7 @@ const sections = [
   },
   {
     heading: 'Cookies and Analytics',
-    body: 'We use Google Analytics to understand how visitors navigate the site. Google Analytics relies on cookies that collect aggregated insights about page views, time on site, and referral sources. We do not use analytics cookies for advertising or cross-site tracking.',
+    body: 'We use privacy-focused analytics tools to understand how visitors navigate the site. These tools rely on first-party cookies that collect aggregated insights about page views, time on site, and referral sources. We do not use analytics cookies for advertising or cross-site tracking.',
   },
   {
     heading: 'How We Use Information',
@@ -21,11 +21,11 @@ const sections = [
   },
   {
     heading: 'Sharing and Retention',
-    body: 'We do not sell personal information. Aggregated analytics data is shared with Google only through their analytics tools. Logs and form submissions are retained for as long as needed to operate the website or until removal is requested.',
+    body: 'We do not sell personal information. Aggregated analytics data remains within our analytics tooling. Logs and form submissions are retained for as long as needed to operate the website or until removal is requested.',
   },
   {
     heading: 'Your Choices',
-    body: 'You can disable cookies in your browser, opt out of Google Analytics through their add-on, or contact privacy@nordsightanalytics.com to request access, updates, or deletion of information associated with you.',
+    body: 'You can disable cookies in your browser or contact privacy@nordsightanalytics.com to request access, updates, or deletion of information associated with you.',
   },
 ]
 
