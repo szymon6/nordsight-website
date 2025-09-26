@@ -17,7 +17,7 @@ function scrollToWhatWeDo() {
     const prefersMobileLayout =
       typeof window !== 'undefined' &&
       window.matchMedia('(max-width: 640px)').matches
-    const offset = prefersMobileLayout ? -70 : -130
+    const offset = prefersMobileLayout ? -70 : -140
     smoothScrollIntoView(section, { offset, duration: 2500 })
   }
 }
