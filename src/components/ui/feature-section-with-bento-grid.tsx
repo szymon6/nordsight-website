@@ -73,7 +73,7 @@ function Feature({ content = defaultContent }: FeatureProps) {
   return (
     <section
       id="what-we-do"
-      className="relative z-10 w-full bg-background py-20 lg:py-40"
+      className="relative z-10 w-full bg-white py-20 lg:py-40"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-10">

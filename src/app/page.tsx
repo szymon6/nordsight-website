@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <HeaderSection />
-      <FeatureSection />
+      <div className="relative z-10 w-full bg-white text-foreground">
+        <FeatureSection />
+      </div>
     </main>
   );
 }
